@@ -1,35 +1,41 @@
 <div class="container">
-    <div class="row">
+    <div class="row header text-center">
         <div class="col-sm-12">
-            <img src="https://images.ctfassets.net/oewsurrg31ok/2BxSmgM43Mgv6ax7Jgp85i/947a6b18053f6de531de508a06983d98/2019_Burger_Banzai.png" class="w-100">
+            <img src="/assets/img/burger.png" class="img-responsive burger-main">
             <h1>Eat Da Burger!</h1>
+        </div>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-12">
+            <input type="text" class="form-control" placeholder="What burger do you want to eat?" id="text-box"></input>
+            <button class="btn btn-primary" id="submit">Submit!</button>
+            <p>Enter the burger you want to eat. Press "Submit" after"</p>
         </div>
     </div>
     <div class="row">
         <div class="col-sm-6">
+            <h2 class="text-center">Burgers to Eat</h2>
             <ol>
            {{#each burgers}}
               {{#unless devoured}}
+              <div class="burgerblock">
                {{>burger-block   devourBtn=true}}
+               </div>
                {{/unless}}
            {{/each}}
            </ol>
         </div>
         <div class="col-sm-6">
+            <h2 class="text-center">Burgers Eaten</h2>
            <ol>
            {{#each burgers}}
               {{#if devoured}}
+                <div class="burgerblock">
                {{>burger-block   devourBtn=false}}
+               </div>
                {{/if}}
            {{/each}}
            </ol>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <textarea id="text-box"></textarea>
-            <button id="submit">Submit!</button>
-            <p>Enter the burger you want to eat. Press "Submit" after"</p>
         </div>
     </div>
 </div>
