@@ -8,7 +8,6 @@ const connection = mysql.createConnection({
   database: "burgers_db"
 });
 
-// Make connection.
 connection.connect((err) => {
   if (err) {
     console.error(`Error connecting to DB: ${err.stack}`);
@@ -17,5 +16,4 @@ connection.connect((err) => {
   console.log(`Connected to DB with ID ${connection.threadId}`);
 });
 
-// Export connection for our ORM to use.
 module.exports = connection;
